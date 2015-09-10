@@ -13,7 +13,6 @@
                               dataservice) {
         var vm = this;
         vm.title = 'Admin';
-        vm.users;
 
         activate();
 
