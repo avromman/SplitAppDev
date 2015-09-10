@@ -1,0 +1,37 @@
+<section id="dashboard-view" class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>{{vm.title}}</h2>
+                    <div class="pull-right">
+                        Who are you ?
+                        <select ng-model="vm.selectedUser" ng-options="user.id as user.firstName + ' ' + user.lastName for user in vm.users"></select>
+                    </div>
+                    <clear/>
+                    <div class="action-bar">
+                        <div class="btn btn-primary" ng-click="vm.add=!vm.add">Add a bill</div>
+                        <div class="btn btn-success" ng-click="">Balance expenses</div>
+                    </div>
+                    <widget-add-bill ng-show="vm.add" ></widget-add-bill>
+                    <table class="table table-striped">
+                        
+                        </select>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Created</th>
+                                <th>Splitted with</th>
+                                <th><select ng-model="vm.search" ng-options="user.id as user.firstName + ' ' + user.lastName for user in vm.users"><option value="">Created By</option></select></th>                                
+                            </tr>
+                        </thead>
+                        <tbody widget-bill ng-repeat="bill in vm.filteredBills track by $index">
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</section>

@@ -1,0 +1,7 @@
+<tr class="col-mg-12">
+    <td>{{bill.title}}</td>
+    <td>{{bill.amount | currency}}</td>
+    <td>{{bill.created | date:'d MMM H:m'}}</td>
+    <td>{{vm.showUsers(bill.splitWith)}}</td>
+    <td>{{vm.getUserById(bill.createdBy)}}</td>
+</tr>

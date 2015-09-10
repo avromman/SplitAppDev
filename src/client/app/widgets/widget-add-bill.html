@@ -1,0 +1,10 @@
+<form name="addBillForm" novalidate class="simple-form">
+    Description: <input type="text" ng-model="newbill.title" required/>
+    Amount: <input type="number" ng-model="newbill.amount" required/>
+    <br/>
+    Split with: <div ng-repeat="currUser in vm.users track by $index">
+        {{currUser.firstName + ' ' + currUser.lastName}}
+        <input type="checkbox" ng-model="currUser.selected"  value="currUser.selected">
+    </div>
+    <input type="submit" ng-click="save()" value="Save" />
+  </form>
